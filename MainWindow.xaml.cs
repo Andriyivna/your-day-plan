@@ -20,9 +20,37 @@ namespace your_day_plan
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Task> tasks = new List<Task>();
+
         public MainWindow()
         {
             InitializeComponent();
+
+           
+            ChoseDate.Content = MyCalendar.DisplayDate.Date.ToShortDateString();
+
+
+            list.ItemsSource = tasks;
+         
+
+        }
+
+        private void AddNewTask_Click(object sender, RoutedEventArgs e)
+        {
+            AddTaskPopup.IsOpen = true;
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            AddTaskPopup.IsOpen = false;           
+            tasks.Add(new Task(taskName.Text, categoryBox.Text, taskDate.DisplayDate.ToShortDateString(),false));
+            list.Items.Refresh();
+        }
+
+        private void All_Click(object sender, RoutedEventArgs e)
+        {
+            
+            
         }
     }
 }
