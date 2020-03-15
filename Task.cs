@@ -10,14 +10,15 @@ namespace your_day_plan
     {
 
 
-        public string task{ get; set;}
+        public string task { get; set; }
         public string category { get; set; }
-        public string dateOfTask{ get; set;}
-        public bool done{ get; set;}
+        public string dateOfTask { get; set; }
+        public bool done { get; set; }
 
 
 
-        public Task(string taskName, string categoryBox = "No category", string dateOf = "", bool cheskDone = false){
+        public Task(string taskName, string categoryBox = "No category", string dateOf = "", bool cheskDone = false)
+        {
 
             task = taskName;
             category = categoryBox;
